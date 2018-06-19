@@ -1,0 +1,28 @@
+<h1>Eat Da Burger!!!</h1>
+
+<h2>Burgers, Eat Them!!!</h2>
+<ul>
+    {{#each burger}} {{#unless this.devoured}}
+    <li>
+        {{this.name}}
+        <form action="burger/update/{{this.id}}?_method=PUT" method="POST">
+            <input type="hidden" name="devoured" value="false">
+            <button type="submit">EAT DA BURGER!</button>
+        </form>
+        {{> burger/delete-burger}}
+    </li>
+    {{/if}} {{/each}}
+</ul>
+
+<h2>What kinda burger are you feeling?</h2>
+
+<div class="form-group">
+    <label for="slee">Devoured?</label>
+    <br>
+    <input type="radio" name="devoured" value="1" checked> Devoured!
+    <br>
+    <input type="radio" name="devoured" value="0"> Ready to smash?
+</div>
+
+<button type="submit">Add Burger</button>
+</form>
