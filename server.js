@@ -1,5 +1,6 @@
 var express = require('express')
-var bodyParser = require('body-parser')
+var bodyparser = require('body-parser')
+var path = require('path')
 var methodOverride = require('method-override')
 var morgan = require('morgan')
 var expresshbs = require('express-handlebars')
@@ -19,11 +20,6 @@ app.use(bodyparser.urlencoded({
     extended: true
 }))
 app.use(bodyparser.json())
-
-
-//routes
-var routes = require('./controllers/burgers_controller.js')
-app.use('/', routes);
 
 
 
